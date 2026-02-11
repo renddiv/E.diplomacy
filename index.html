@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>E-Diplomacy</title>
+
+  <style>
+    body {
+      font-family: 'Times New Roman', Times, serif;
+      margin: 0;
+      padding: 0;
+      background-color: #f4f4f4;
+    }
+
+    header {
+      background-color: #003366;
+      color: white;
+      padding: 10px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+    }
+
+    header .logo {
+      display: flex;
+      align-items: center;
+      gap: 10px; /* Jarak antara gambar dan teks */
+      font-size: 24px;
+      font-weight: bold;
+      height: 40px; /* Sesuaikan tinggi logo */
+    }
+
+    header .logo img {
+      height: 100%;
+      width: auto;
+    }
+
+    nav {
+      display: flex;
+      gap: 20px;
+    }
+
+    nav a {
+      color: white;
+      text-decoration: none;
+      padding: 5px 10px;
+      border-radius: 4px;
+      transition: background-color 0.3s;
+    }
+
+    nav a:hover {
+      background-color: #005599;
+    }
+
+    /* ==========================
+       HERO BACKGROUND VIDEO
+       ========================== */
+    .hero {
+      height: 400px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      color: white;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+      transition: height 0.5s ease; /* Transisi smooth saat ukuran berubah */
+    }
+
+    .hero.fullscreen {
+      height: 100vh; /* Full screen saat awal */
+    }
+
+    /* video di belakang */
+    .hero video {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      z-index: 0;
+      transition: height 0.5s ease; /* Transisi untuk video juga */
+    }
+
+    /* overlay biar tulisan keliatan */
+    .hero::after {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.45);
+      z-index: 1;
+    }
+
+    /* teks di atas overlay */
+    .hero h1 {
+      font-size: 48px;
+      margin: 0;
+      position: relative;
+      z-index: 2;
+      text-shadow: 0 6px 18px rgba(0,0,0,0.5);
+    }
+
+    .content {
+      max-width: 1200px;
+      margin: 20px auto;
+      padding: 20px;
+      background-color: white;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    }
+
+    .news-section {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+      gap: 20px;
+    }
+
+    .news-item {
+      border: 1px solid #ddd;
+      padding: 15px;
+      border-radius: 5px;
+    }
+
+    .news-item a {
+      display: inline-block;
+      margin-top: 10px;
+      color: #003366;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .news-item a:hover {
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      margin-top: 20px;
+    }
+
+    .running-text {
+      background-color: #003366;
+      color: white;
+      text-align: center;
+      padding: 10px;
+      overflow: hidden;
+      white-space: nowrap;
+    }
+
+    .running-text marquee {
+      font-size: 18px;
+      font-weight: bold;
+    }
+
+    .back-home {
+      display: block;
+      text-align: center;
+      margin: 20px 0;
+      color: #003366;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    .back-home:hover {
+      text-decoration: underline;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <div class="logo">
+      <img src="E_diplomacy-removebg-preview.png" alt="E-Diplomacy Logo">
+      <span>E-Diplomacy</span> <!-- Judul website di sebelah gambar -->
+    </div>
+    <nav>
+      <a href="E diplomacy.html">Home</a>
+      <a href="Merch.html">Merch</a>
+      <a href="Kontak.html">Contact</a>
+
+      <a href="https://www.instagram.com/the.diplomacy/">
+      <svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path fill="currentColor" fill-rule="evenodd" d="M3 8a5 5 0 0 1 5-5h8a5 5 0 0 1 5 5v8a5 5 0 0 1-5 5H8a5 5 0 0 1-5-5V8Zm5-3a3 3 0 0 0-3 3v8a3 3 0 0 0 3 3h8a3 3 0 0 0 3-3V8a3 3 0 0 0-3-3H8Zm7.597 2.214a1 1 0 0 1 1-1h.01a1 1 0 1 1 0 2h-.01a1 1 0 0 1-1-1ZM12 9a3 3 0 1 0 0 6 3 3 0 0 0 0-6Zm-5 3a5 5 0 1 1 10 0 5 5 0 0 1-10 0Z" clip-rule="evenodd"/>
+</svg></a>
+      <a href=" https://wa.me/082142985955">
+<svg aria-hidden="true" xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="none" viewBox="0 0 24 24">
+  <path fill="currentColor" fill-rule="evenodd" d="M12 4a8 8 0 0 0-6.895 12.06l.569.718-.697 2.359 2.32-.648.379.243A8 8 0 1 0 12 4ZM2 12C2 6.477 6.477 2 12 2s10 4.477 10 10-4.477 10-10 10a9.96 9.96 0 0 1-5.016-1.347l-4.948 1.382 1.426-4.829-.006-.007-.033-.055A9.958 9.958 0 0 1 2 12Z" clip-rule="evenodd"/>
+  <path fill="currentColor" d="M16.735 13.492c-.038-.018-1.497-.736-1.756-.83a1.008 1.008 0 0 0-.34-.075c-.196 0-.362.098-.49.291-.146.217-.587.732-.723.886-.018.02-.042.045-.057.045-.013 0-.239-.093-.307-.123-1.564-.68-2.751-2.313-2.914-2.589-.023-.04-.024-.057-.024-.057.005-.021.058-.074.085-.101.08-.079.166-.182.249-.283l.117-.14c.121-.14.175-.25.237-.375l.033-.066a.68.68 0 0 0-.02-.64c-.034-.069-.65-1.555-.715-1.711-.158-.377-.366-.552-.655-.552-.027 0 0 0-.112.005-.137.005-.883.104-1.213.311-.35.22-.94.924-.94 2.16 0 1.112.705 2.162 1.008 2.561l.041.06c1.161 1.695 2.608 2.951 4.074 3.537 1.412.564 2.081.63 2.461.63.16 0 .288-.013.4-.024l.072-.007c.488-.043 1.56-.599 1.804-1.276.192-.534.243-1.117.115-1.329-.088-.144-.239-.216-.43-.308Z"/>
+</svg></a>
+
+
+    </nav>
+  </header>
+
+  <!-- HERO dengan video background -->
+  <section class="hero fullscreen" id="hero">
+
+    <!-- Background Video -->
+    <video autoplay muted loop playsinline>
+      <source src="The Age of Disclosure _ Official Trailer (2025).mp4" type="video/mp4">
+      Browser kamu tidak mendukung video.
+    </video>
+
+    <h1>Welcome to E-Diplomacy</h1>
+  </section>
+
+  <main class="content">
+    <h2>Breaking News</h2>
+
+   <div class="news-section">
+
+  <div class="news-item">
+    <h3>What voters say they want for Christmasy</h3>
+    <p>One big thing dominates Tonya Rincon’s holiday wish list,</p>
+    <a href="P.1.html">Read More!</a>
+  </div>
+
+</div>
+
+  </main>
+
+  <footer>
+    <p>&copy; 2025 E-Diplomacy. see the wider world.</p>
+  </footer>
+
+  <!-- Running Text -->
+  <div class="running-text">
+    <marquee>we will always provide information neutrally</marquee>
+  </div>
+
+  <script>
+    // JavaScript untuk mengubah ukuran hero saat scroll
+    window.addEventListener('scroll', function() {
+      const hero = document.getElementById('hero');
+      if (window.scrollY > 0) {
+        hero.classList.remove('fullscreen');
+      } else {
+        hero.classList.add('fullscreen');
+      }
+    });
+  </script>
+</body>
+</html>

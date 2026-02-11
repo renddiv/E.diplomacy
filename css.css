@@ -1,0 +1,221 @@
+/* Reset dasar */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f4;
+}
+
+.container {
+    width: 900px;
+    max-width: 90vw;
+    margin: auto;
+    text-align: center;
+    padding-top: 10px;
+    transition: transform 0.5s;
+}
+
+header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 20px 0;
+    background-color: #fff;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.icon-cart {
+    position: relative;
+    cursor: pointer;
+}
+
+.icon-cart span {
+    display: flex;
+    width: 30px;
+    height: 30px;
+    background-color: #003366;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: -10px;
+    right: -20px;
+    font-size: 14px;
+}
+
+.listProduct {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 20px;
+    margin-top: 20px;
+}
+
+.listProduct .item {
+    background-color: #eeeee6;
+    padding: 20px;
+    border-radius: 20px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.listProduct .item img {
+    width: 90%;
+    filter: drop-shadow(0 50px 20px #0009);
+}
+
+.listProduct .item h2 {
+    font-weight: 500;
+    font-size: large;
+    margin: 10px 0;
+}
+
+.listProduct .item .price {
+    letter-spacing: 1px;
+    font-size: small;
+    color: #333;
+}
+
+.listProduct .item button {
+    background-color: #003366;
+    color: #eee;
+    padding: 5px 10px;
+    border-radius: 20px;
+    margin-top: 10px;
+    border: none;
+    cursor: pointer;
+    transition: background 0.3s;
+}
+
+.listProduct .item button:hover {
+    background-color: #005599;
+}
+
+.cartTab {
+    width: 400px;
+    background-color: #003366;
+    color: #eee;
+    position: fixed;
+    top: 0;
+    right: -400px;
+    bottom: 0;
+    display: grid;
+    grid-template-rows: 70px 1fr 70px;
+    transition: right 0.5s;
+    z-index: 1000;
+}
+
+body.showCart .cartTab {
+    right: 0;
+}
+
+body.showCart .container {
+    transform: translateX(-250px);
+}
+
+.cartTab h1 {
+    padding: 20px;
+    margin: 0;
+    font-weight: 300;
+}
+
+.cartTab .btn {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+}
+
+.cartTab .btn button {
+    background-color: aquamarine;
+    border: none;
+    font-family: 'Poppins', sans-serif;
+    font-weight: 500;
+    cursor: pointer;
+    padding: 10px;
+}
+
+.cartTab .btn .close {
+    background-color: #eee;
+    color: #003366;
+}
+
+.cartTab .listcart {
+    overflow: auto;
+    padding: 10px;
+}
+
+.cartTab .listcart::-webkit-scrollbar {
+    width: 0;
+}
+
+.cartTab .listcart .item {
+    display: grid;
+    grid-template-columns: 70px 150px 1fr;
+    gap: 10px;
+    text-align: center;
+    align-items: center;
+    padding: 10px;
+    border-bottom: 1px solid #eee;
+}
+
+.cartTab .listcart .item:nth-child(even) {
+    background-color: rgba(238, 238, 238, 0.1);
+}
+
+.cartTab .listcart .item img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.cartTab .listcart .quantity span {
+    display: inline-block;
+    width: 25px;
+    height: 25px;
+    background-color: #eee;
+    color: #003366;
+    border-radius: 50%;
+    cursor: pointer;
+    text-align: center;
+    line-height: 25px;
+}
+
+.cartTab .listcart .quantity span:nth-child(2) {
+    background-color: transparent;
+    color: #eee;
+}
+
+/* Modal Checkout */
+.modal {
+    display: none;
+    position: fixed;
+    z-index: 2000;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+}
+
+.modal-content {
+    background-color: #fff;
+    margin: 15% auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 80%;
+    max-width: 400px;
+    border-radius: 10px;
+}
+
+.close-modal {
+    color: #aaa;
+    float: right;
+    font-size: 28px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.close-modal:hover {
+    color: #000;
+}
